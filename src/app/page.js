@@ -204,7 +204,7 @@ function TonsApp() {
                 </div>
                 <p style={{ color:'#707088', fontSize:11, lineHeight:1.6, margin:'0 0 14px' }}>{vt.desc}</p>
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:8 }}>
-                  {vol.scores.map(s => (
+                 {vol.scores.map(s => (
                     <div key={s.preset} style={{ background:'#0a0a10', border:'1px solid #252535', borderRadius:4, padding:'8px 12px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                       <span style={{ color:'#707088', fontSize:11 }}>{s.emoji} {s.preset}</span>
                       <span style={{ color:scoreColor(s.score), fontWeight:900, fontSize:14 }}>{s.score}</span>
@@ -220,7 +220,7 @@ function TonsApp() {
               <div style={{ ...S.card, borderLeft:`4px solid ${cultCol}` }}>
                 <div style={S.sectionLabel}>Cultural Validation</div>
                 <p style={{ color:'#707088', fontSize:11, lineHeight:1.6, margin:'0 0 14px' }}>
-                  How the world perceived this innings â media volume, sentiment, longevity of discourse. Measured separately from the scoring framework.
+                  How the world perceived this innings â hedia volume, sentiment, longevity of discourse. Measured separately from the scoring framework.
                 </p>
                 <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:12 }}>
                   <div>
@@ -228,7 +228,7 @@ function TonsApp() {
                     <div style={{ color:'#f0f0f8', fontSize:38, fontWeight:900, lineHeight:1 }}>{cultural}</div>
                   </div>
                   <div style={{ textAlign:'right' }}>
-                    <div style={{ color:'#707088', fontSize:10, fontWeight:700, letterSpacing:1, marginBottom:2 }}>TOC SCORE</div>
+                    <div style={{ color:'s707088', fontSize:10, fontWeight:700, letterSpacing:1, marginBottom:2 }}>TOC SCORE</div>
                     <div style={{ color:scoreColor(c.toc), fontSize:38, fontWeight:900, lineHeight:1 }}>{c.toc}</div>
                   </div>
                 </div>
@@ -236,7 +236,7 @@ function TonsApp() {
                   <div style={{ height:'100%', width:`${cultural}%`, background:cultCol, borderRadius:4, transition:'width 0.4s' }} />
                 </div>
                 <div style={{ color:cultCol, fontSize:12, fontWeight:700 }}>
-                  {aligned    && 'â Algorithm and cultural perception are in line.'}
+                  {aligned    && ''â Algorithm and cultural perception are in line.'}
                   {overrated  && `â¼ Culturally overrated by ${Math.abs(Math.round(delta))} points â the narrative may exceed the innings.`}
                   {!aligned && !overrated && `â² Underrated by ${Math.round(delta)} pts â history hasn't caught up yet.`}
                 </div>
@@ -462,7 +462,13 @@ function TonsApp() {
               </p>
             </div>
           )}
-ery && ranked.length === 0 && (
+
+          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:14, paddingBottom:12, borderBottom:'2px solid #252535' }}>
+            <div>
+              <span style={{ color:'#f0f0f8', fontWeight:900, fontSize:18, textTransform:'uppercase', letterSpacing:-0.5 }}>
+                {viewMode === 'divisive' ? 'Most Divisive' : 'Rankings'}
+              </span>
+              {searchQuery && ranked.length === 0 && (
                 <span style={{ color:'#707088', fontSize:12, marginLeft:8 }}>No results for &ldquo;{searchQuery}&rdquo;</span>
               )}
               {searchQuery && ranked.length > 0 && (
@@ -555,7 +561,7 @@ function AppHeader({ onShare, copied, onQuiz }) {
         </div>
         <div style={{ padding:'14px 0 12px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
           <div style={{ display:'flex', alignItems:'center', gap:16 }}>
-            <div style={{ background:'#e8382e', borderRadius:4, padding:'6px 10px', fontSize:22, lineHeight:1, flexShrink:0 }}>ð</div>
+            <div style={{ background:'#e8382e', borderRadius:4, padding:'6px 10px', fontSize:22, lineHeight:1, flexShrink:0 }}>ð¿</div>
             <div>
               <h1 style={{ fontSize:26, fontWeight:900, color:'#f0f0f8', margin:'0 0 2px', letterSpacing:-1, lineHeight:1, textTransform:'uppercase' }}>
                 TONS OF <span style={{ color:'#f5c800' }}>CONSEQUENCE</span>
