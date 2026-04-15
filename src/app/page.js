@@ -597,7 +597,7 @@ function WeightBar({ total }) {
           <span style={{ color:barColor, fontSize:11, fontWeight:700 }}>{status}</span>
         </div>
       </div>
-      <div style={{ position:'relative', height:12, background:'#0a0a10', borderRadius:6, overflow:hidden', border:'1px solid #252535' }}>
+      <div style={{ position:'relative', height:12, background:'#0a0a10', borderRadius:6, overflow:'hidden', border:'1px solid #252535' }}>
         <div style={{ height:'100%', width:`${Math.min(total/130*100,100)}%`, background:barColor, borderRadius:6, transition:'width 0.15s' }} />
         <div style={{ position:'absolute', left:`${100/130*100}%`, top:0, bottom:0, width:2, background:'rgba(240,240,248,0.15)' }} />
       </div>
