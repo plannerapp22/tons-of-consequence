@@ -128,7 +128,7 @@ function TonsApp() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // ââ DETAIL VIEW âââââââââââââââââââââââââââââââââââââââââââ
+  // ── DETAIL VIEW ───────────────────────────────────────────
   if (selected) {
     const c       = { ...selected, toc: calcToc(selected, weights) };
     const totalW  = Object.values(weights).reduce((a,b) => a+b, 0);
@@ -144,7 +144,7 @@ function TonsApp() {
       <div style={S.page}>
         <AppHeader onShare={copyShareLink} copied={copied} onQuiz={() => router.push('/quiz')} />
         <div style={S.container}>
-          <button onClick={() => setSelected(null)} style={S.backBtn}>â BACK TO RANKINGS</button>
+          <button onClick={() => setSelected(null)} style={S.backBtn}>← BACK TO RANKINGS</button>
           <div style={S.detailGrid}>
             <div>
               <div style={{ ...S.card, borderTop:'4px solid #f5c800', marginBottom:14 }}>
@@ -159,7 +159,7 @@ function TonsApp() {
                   <span style={{ color:'#f5c800', fontSize:52, fontWeight:900, lineHeight:1, letterSpacing:-2 }}>{c.runs}{c.notOut?'*':''}</span>
                   <div>
                     <div style={{ color:'#c0c0d0', fontSize:15, fontWeight:600 }}>vs {c.opponent}</div>
-                    <div style={{ color:'#707088', fontSize:12 }}>{c.venue} Â· {c.year}</div>
+                    <div style={{ color:'#707088', fontSize:12 }}>{c.venue} · {c.year}</div>
                   </div>
                 </div>
                 {c.series && <div style={{ color:'#404058', fontSize:11, marginBottom:10, letterSpacing:1, textTransform:'uppercase' }}>{c.series}</div>}
@@ -204,7 +204,7 @@ function TonsApp() {
                 </div>
                 <p style={{ color:'#707088', fontSize:11, lineHeight:1.6, margin:'0 0 14px' }}>{vt.desc}</p>
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:8 }}>
-                 {vol.scores.map(s => (
+                  {vol.scores.map(s => (
                     <div key={s.preset} style={{ background:'#0a0a10', border:'1px solid #252535', borderRadius:4, padding:'8px 12px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                       <span style={{ color:'#707088', fontSize:11 }}>{s.emoji} {s.preset}</span>
                       <span style={{ color:scoreColor(s.score), fontWeight:900, fontSize:14 }}>{s.score}</span>
@@ -220,7 +220,7 @@ function TonsApp() {
               <div style={{ ...S.card, borderLeft:`4px solid ${cultCol}` }}>
                 <div style={S.sectionLabel}>Cultural Validation</div>
                 <p style={{ color:'#707088', fontSize:11, lineHeight:1.6, margin:'0 0 14px' }}>
-                  How the world perceived this innings â hedia volume, sentiment, longevity of discourse. Measured separately from the scoring framework.
+                  How the world perceived this innings — media volume, sentiment, longevity of discourse. Measured separately from the scoring framework.
                 </p>
                 <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:12 }}>
                   <div>
@@ -228,7 +228,7 @@ function TonsApp() {
                     <div style={{ color:'#f0f0f8', fontSize:38, fontWeight:900, lineHeight:1 }}>{cultural}</div>
                   </div>
                   <div style={{ textAlign:'right' }}>
-                    <div style={{ color:'s707088', fontSize:10, fontWeight:700, letterSpacing:1, marginBottom:2 }}>TOC SCORE</div>
+                    <div style={{ color:'#707088', fontSize:10, fontWeight:700, letterSpacing:1, marginBottom:2 }}>TOC SCORE</div>
                     <div style={{ color:scoreColor(c.toc), fontSize:38, fontWeight:900, lineHeight:1 }}>{c.toc}</div>
                   </div>
                 </div>
@@ -236,9 +236,9 @@ function TonsApp() {
                   <div style={{ height:'100%', width:`${cultural}%`, background:cultCol, borderRadius:4, transition:'width 0.4s' }} />
                 </div>
                 <div style={{ color:cultCol, fontSize:12, fontWeight:700 }}>
-                  {aligned    && ''â Algorithm and cultural perception are in line.'}
-                  {overrated  && `â¼ Culturally overrated by ${Math.abs(Math.round(delta))} points â the narrative may exceed the innings.`}
-                  {!aligned && !overrated && `â² Underrated by ${Math.round(delta)} pts â history hasn't caught up yet.`}
+                  {aligned    && '✓ Algorithm and cultural perception are in line.'}
+                  {overrated  && `▼ Culturally overrated by ${Math.abs(Math.round(delta))} points — the narrative may exceed the innings.`}
+                  {!aligned && !overrated && `▲ Underrated by ${Math.round(delta)} pts — history hasn't caught up yet.`}
                 </div>
               </div>
             </div>
@@ -248,7 +248,7 @@ function TonsApp() {
               <div style={{ height:14 }} />
               <div style={{ ...S.card, marginBottom:14 }}>
                 <div style={S.sectionLabel}>Match Stats</div>
-                {[['Runs',`${c.runs}${c.notOut?'*':''}`],['Balls',c.balls??'â'],['Minutes',c.minutes??'â'],['Result',c.matchResult?.toUpperCase()??'â']].map(([l,v]) => (
+                {[['Runs',`${c.runs}${c.notOut?'*':''}`],['Balls',c.balls??'—'],['Minutes',c.minutes??'—'],['Result',c.matchResult?.toUpperCase()??'—']].map(([l,v]) => (
                   <div key={l} style={{ display:'flex', justifyContent:'space-between', padding:'8px 0', borderBottom:'1px solid #252535' }}>
                     <span style={{ color:'#707088', fontSize:11, fontWeight:600 }}>{l}</span>
                     <span style={{ color:'#f0f0f8', fontWeight:900, fontSize:13 }}>{v}</span>
@@ -274,18 +274,18 @@ function TonsApp() {
     );
   }
 
-  // ââ COMPARE VIEW ââââââââââââââââââââââââââââââââââââââââââ
+  // ── COMPARE VIEW ──────────────────────────────────────────
   if (compareMode && compareItems.length >= 2) {
     const verdict = writeVerdict(compareItems[0], compareItems[1], weights);
     return (
       <div style={S.page}>
         <AppHeader onShare={copyShareLink} copied={copied} onQuiz={() => router.push('/quiz')} />
         <div style={S.container}>
-          <button onClick={() => setCompareMode(false)} style={S.backBtn}>â BACK</button>
+          <button onClick={() => setCompareMode(false)} style={S.backBtn}>← BACK</button>
           <h2 style={{ color:'#f0f0f8', fontWeight:900, fontSize:22, margin:'0 0 6px', textTransform:'uppercase', letterSpacing:-0.5 }}>Head to Head</h2>
 
           <div style={{ ...S.card, borderLeft:`4px solid ${scoreColor(verdict.tocA)}`, marginBottom:24, padding:'18px 20px' }}>
-            <div style={{ color:'#707088', fontSize:10, fontWeight:700, letterSpacing:2, textTransform:'uppercase', marginBottom:10 }}>THE VERDICT â on your settings</div>
+            <div style={{ color:'#707088', fontSize:10, fontWeight:700, letterSpacing:2, textTransform:'uppercase', marginBottom:10 }}>THE VERDICT — on your settings</div>
             <p style={{ color:'#f0f0f8', fontSize:15, lineHeight:1.8, margin:'0 0 12px', fontWeight:500 }}>{verdict.verdict}</p>
             <div style={{ display:'flex', gap:24, flexWrap:'wrap' }}>
               {compareItems.map(c => (
@@ -308,10 +308,10 @@ function TonsApp() {
                     <div style={{ fontSize:28, marginBottom:4 }}>{FLAGS[c.country]}</div>
                     <div style={{ color:'#f0f0f8', fontWeight:900, fontSize:16, marginBottom:2, textTransform:'uppercase' }}>{c.player}</div>
                     <div style={{ color:'#f5c800', fontSize:34, fontWeight:900, lineHeight:1, letterSpacing:-1 }}>{c.runs}{c.notOut?'*':''}</div>
-                    <div style={{ color:'#707088', fontSize:11, marginBottom:12 }}>vs {c.opponent} Â· {c.year}</div>
+                    <div style={{ color:'#707088', fontSize:11, marginBottom:12 }}>vs {c.opponent} · {c.year}</div>
                     <ScoreDisplay score={c.toc} compact />
                     <div style={{ marginTop:8, display:'inline-block', padding:'3px 8px', borderRadius:3, background:cvt.color+'20', border:`1px solid ${cvt.color}40` }}>
-                      <span style={{ color:cvt.color, fontSize:9, fontWeight:700, letterSpacing:1 }}>{cvt.label} Â· {cv.volatility}</span>
+                      <span style={{ color:cvt.color, fontSize:9, fontWeight:700, letterSpacing:1 }}>{cvt.label} · {cv.volatility}</span>
                     </div>
                   </div>
                   <div style={{ height:1, background:'#252535', margin:'14px 0' }} />
@@ -338,7 +338,7 @@ function TonsApp() {
     );
   }
 
-  // ââ MAIN VIEW âââââââââââââââââââââââââââââââââââââââââââââ
+  // ── MAIN VIEW ─────────────────────────────────────────────
   const totalWeight = Object.values(weights).reduce((a,b) => a+b, 0);
   const activeList  = viewMode === 'divisive' ? divisive : ranked;
 
@@ -360,7 +360,7 @@ function TonsApp() {
         <div>
           <div style={{ ...S.card, padding:20, marginBottom:16 }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6 }}>
-              <div style={S.sideLabel}>â Your Weighting</div>
+              <div style={S.sideLabel}>⚖ Your Weighting</div>
               <button onClick={() => setWeights(DEFAULT_WEIGHTS)} style={S.resetBtn}>RESET</button>
             </div>
             <WeightBar total={totalWeight} />
@@ -416,35 +416,35 @@ function TonsApp() {
           <div style={{ ...S.card, padding:16, marginBottom:16 }}>
             <div style={S.sideLabel}>Share & Export</div>
             <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
-              <button onClick={copyShareLink} style={S.shareBtn}>{copied ? 'â Link Copied!' : 'ð Copy Share Link'}</button>
-              <button onClick={downloadScreenshot} style={S.exportBtn} disabled={downloading}>{downloading ? 'Generating...' : 'ð· Screenshot Rankings'}</button>
-              <button onClick={downloadCSV} style={S.exportBtn}>ð¥ Download CSV</button>
+              <button onClick={copyShareLink} style={S.shareBtn}>{copied ? '✓ Link Copied!' : '🔗 Copy Share Link'}</button>
+              <button onClick={downloadScreenshot} style={S.exportBtn} disabled={downloading}>{downloading ? 'Generating...' : '📷 Screenshot Rankings'}</button>
+              <button onClick={downloadCSV} style={S.exportBtn}>📥 Download CSV</button>
             </div>
             <p style={{ color:'#404058', fontSize:10, lineHeight:1.6, marginTop:10 }}>Share link encodes your exact weighting.</p>
           </div>
 
           <p style={{ color:'#404058', fontSize:10, lineHeight:1.7, padding:'0 4px' }}>
-            PROTOTYPE Â· {centuries.length} curated centuries. Full version covers all ~4,000 Test centuries.
+            PROTOTYPE · {centuries.length} curated centuries. Full version covers all ~4,000 Test centuries.
           </p>
         </div>
 
         <div>
           {/* Search */}
           <div style={{ position:'relative', marginBottom:16 }}>
-            <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#404058', fontSize:16, pointerEvents:'none' }}>ð</span>
+            <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#404058', fontSize:16, pointerEvents:'none' }}>🔍</span>
             <input ref={searchRef} type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Search player, opponent, venue, year, tag... (âK)"
+              placeholder="Search player, opponent, venue, year, tag... (⌘K)"
               style={{ width:'100%', background:'#14141f', border:`1px solid ${searchQuery?'#3a3a55':'#252535'}`, color:'#f0f0f8', padding:'11px 14px 11px 42px', borderRadius:6, fontSize:13, outline:'none', transition:'border-color 0.15s' }}
             />
             {searchQuery && (
               <button onClick={() => setSearchQuery('')}
-                style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', background:'none', border:'none', color:'#707088', cursor:'pointer', fontSize:16, lineHeight:1 }}>Ã</button>
+                style={{ position:'absolute', right:12, top:'50%', transform:'translateY(-50%)', background:'none', border:'none', color:'#707088', cursor:'pointer', fontSize:16, lineHeight:1 }}>×</button>
             )}
           </div>
 
           {/* View tabs */}
           <div style={{ display:'flex', gap:0, marginBottom:16, background:'#14141f', borderRadius:6, border:'1px solid #252535', padding:4 }}>
-            {[{id:'rankings',label:'ð Rankings'},{id:'divisive',label:'ð¥ Most Divisive'}].map(tab => (
+            {[{id:'rankings',label:'📊 Rankings'},{id:'divisive',label:'🔥 Most Divisive'}].map(tab => (
               <button key={tab.id} onClick={() => setViewMode(tab.id)} style={{
                 flex:1, padding:'8px 12px', borderRadius:4, border:'none',
                 background: viewMode===tab.id ? '#252535' : 'transparent',
@@ -458,7 +458,7 @@ function TonsApp() {
           {viewMode === 'divisive' && (
             <div style={{ ...S.card, padding:'12px 16px', marginBottom:14, borderLeft:'4px solid #e8382e' }}>
               <p style={{ color:'#707088', fontSize:12, lineHeight:1.6, margin:0 }}>
-                <strong style={{ color:'#f0f0f8' }}>Most Divisive</strong> â innings where your values change everything. High divisiveness means this century ranks wildly differently depending on what you weight. These are the pub arguments waiting to happen.
+                <strong style={{ color:'#f0f0f8' }}>Most Divisive</strong> — innings where your values change everything. High divisiveness means this century ranks wildly differently depending on what you weight. These are the pub arguments waiting to happen.
               </p>
             </div>
           )}
@@ -475,12 +475,12 @@ function TonsApp() {
                 <span style={{ color:'#707088', fontSize:12, marginLeft:8 }}>{ranked.length} result{ranked.length!==1?'s':''}</span>
               )}
             </div>
-            <span style={{ color:'#404058', fontSize:10, fontWeight:600, letterSpacing:1 }}>CLICK FOR DETAIL Â· TICK TO COMPARE</span>
+            <span style={{ color:'#404058', fontSize:10, fontWeight:600, letterSpacing:1 }}>CLICK FOR DETAIL · TICK TO COMPARE</span>
           </div>
 
           {viewMode === 'rankings' && ranked.length === 0 && (
             <div style={{ ...S.card, padding:32, textAlign:'center' }}>
-              <div style={{ fontSize:32, marginBottom:12 }}>ð</div>
+              <div style={{ fontSize:32, marginBottom:12 }}>🔍</div>
               <div style={{ color:'#f0f0f8', fontWeight:700, marginBottom:6 }}>No innings found</div>
               <div style={{ color:'#707088', fontSize:12 }}>Try a different search or clear your filters.</div>
               <button onClick={() => setSearchQuery('')} style={{ ...S.resetBtn, marginTop:12 }}>CLEAR SEARCH</button>
@@ -518,9 +518,9 @@ function TonsApp() {
                       {(c.tags||[]).slice(0,2).map(t => <Tag key={t} text={t} />)}
                     </div>
                     <div style={{ color:'#707088', fontSize:11 }}>
-                      vs {c.opponent} Â· {(c.venue||'').split(',')[0]} Â· {c.year} Â·{' '}
+                      vs {c.opponent} · {(c.venue||'').split(',')[0]} · {c.year} ·{' '}
                       <span style={{ color:c.matchResult==='win'?'#2dd65a':c.matchResult==='draw'?'#f5c800':'#e8382e', fontWeight:700 }}>{(c.matchResult||'').toUpperCase()}</span>
-                      {viewMode==='divisive' && <span style={{ marginLeft:8, color:vt.color, fontSize:10, fontWeight:700 }}>Â· {vt.label}</span>}
+                      {viewMode==='divisive' && <span style={{ marginLeft:8, color:vt.color, fontSize:10, fontWeight:700 }}>· {vt.label}</span>}
                     </div>
                   </div>
 
@@ -538,7 +538,7 @@ function TonsApp() {
                   </div>
 
                   <div onClick={e => { e.stopPropagation(); toggleCompare(c.id); }} style={{ width:22, height:22, flexShrink:0, border:`2px solid ${isCompared?'#f5c800':'#252535'}`, background:isCompared?'#f5c800':'transparent', display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', color:'#000', fontSize:12, borderRadius:4, fontWeight:900 }}>
-                    {isCompared ? 'â' : ''}
+                    {isCompared ? '✓' : ''}
                   </div>
                 </div>
               );
@@ -555,13 +555,13 @@ function AppHeader({ onShare, copied, onQuiz }) {
     <div style={{ background:'#14141f', borderBottom:'3px solid #e8382e', padding:'0 28px', position:'sticky', top:0, zIndex:100 }}>
       <div style={{ maxWidth:1200, margin:'0 auto' }}>
         <div style={{ borderBottom:'1px solid #252535', padding:'6px 0', display:'flex', alignItems:'center', gap:16 }}>
-          <span style={{ color:'#e8382e', fontSize:9, fontWeight:800, letterSpacing:3, textTransform:'uppercase' }}>â TEST CRICKET</span>
+          <span style={{ color:'#e8382e', fontSize:9, fontWeight:800, letterSpacing:3, textTransform:'uppercase' }}>● TEST CRICKET</span>
           <span style={{ color:'#404058', fontSize:9 }}>|</span>
           <span style={{ color:'#404058', fontSize:9, letterSpacing:1 }}>NOT ALL HUNDREDS ARE CREATED EQUAL</span>
         </div>
         <div style={{ padding:'14px 0 12px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
           <div style={{ display:'flex', alignItems:'center', gap:16 }}>
-            <div style={{ background:'#e8382e', borderRadius:4, padding:'6px 10px', fontSize:22, lineHeight:1, flexShrink:0 }}>ð¿</div>
+            <div style={{ background:'#e8382e', borderRadius:4, padding:'6px 10px', fontSize:22, lineHeight:1, flexShrink:0 }}>🏏</div>
             <div>
               <h1 style={{ fontSize:26, fontWeight:900, color:'#f0f0f8', margin:'0 0 2px', letterSpacing:-1, lineHeight:1, textTransform:'uppercase' }}>
                 TONS OF <span style={{ color:'#f5c800' }}>CONSEQUENCE</span>
@@ -572,11 +572,11 @@ function AppHeader({ onShare, copied, onQuiz }) {
           <div style={{ display:'flex', gap:8 }}>
             {onQuiz && (
               <button onClick={onQuiz} style={{ background:'#f5c800', border:'none', color:'#000', padding:'7px 14px', borderRadius:4, cursor:'pointer', fontSize:11, fontWeight:800, letterSpacing:1, textTransform:'uppercase' }}>
-                ðº THE PUB TEST
+                ² THE PUB TEST
               </button>
             )}
             <button onClick={onShare} style={{ background:copied?'#2dd65a':'transparent', border:`1px solid ${copied?'#2dd65a':'#252535'}`, color:copied?'#000':'#707088', padding:'7px 14px', borderRadius:4, cursor:'pointer', fontSize:11, fontWeight:700, letterSpacing:1, transition:'all 0.2s' }}>
-              {copied ? 'â COPIED!' : 'ð SHARE'}
+              {copied ? '┓ COPIED!' : '🔗 SHARE'}
             </button>
           </div>
         </div>
@@ -587,7 +587,7 @@ function AppHeader({ onShare, copied, onQuiz }) {
 
 function WeightBar({ total }) {
   const barColor = total===100?'#2dd65a':total>100?'#e8382e':'#f5c800';
-  const status   = total===100?'â 100%':total>100?`+${total-100} over`:`${100-total} remaining`;
+  const status   = total===100?'✓ 100%':total>100?`+${total-100} over`:`${100-total} remaining`;
   return (
     <div style={{ marginBottom:16 }}>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:8 }}>
@@ -597,11 +597,11 @@ function WeightBar({ total }) {
           <span style={{ color:barColor, fontSize:11, fontWeight:700 }}>{status}</span>
         </div>
       </div>
-      <div style={{ position:'relative', height:12, background:'#0a0a10', borderRadius:6, overflow:'hidden', border:'1px solid #252535' }}>
+      <div style={{ position:'relative', height:12, background:'#0a0a10', borderRadius:6, overflow:hidden', border:'1px solid #252535' }}>
         <div style={{ height:'100%', width:`${Math.min(total/130*100,100)}%`, background:barColor, borderRadius:6, transition:'width 0.15s' }} />
         <div style={{ position:'absolute', left:`${100/130*100}%`, top:0, bottom:0, width:2, background:'rgba(240,240,248,0.15)' }} />
       </div>
-      {total!==100 && <p style={{ color:'#404058', fontSize:10, margin:'4px 0 0' }}>Scores auto-normalise â ratios hold even if total â  100</p>}
+      {total!==100 && <p style={{ color:'#404058', fontSize:10, margin:'4px 0 0' }}>Scores auto-normalise — ratios hold even if total ≠ 100</p>}
     </div>
   );
 }
@@ -653,3 +653,4 @@ export default function Page() {
     </Suspense>
   );
 }
+�
