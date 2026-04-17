@@ -56,7 +56,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["World Record","WACA","Weakest opposition"],
     story: "Hayden dismantled Lara's world record with 380 off 437 balls on the fastest pitch on earth. Raw power executed with surgical precision. The record stands â but the asterisk of Zimbabwe opposition is part of its story.",
     culturalValidation: 80,
-    levers: { matchImpact:88, conditions:38, clutchness:42, narrative:72, historicalWeight:96, perceivedGreatness;72 },
+    levers: { matchImpact:88, conditions:38, clutchness:42, narrative:72, historicalWeight:96, perceivedGreatness:72 },
   },
   {
     id: 6,
@@ -100,7 +100,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Ashes 2005","Rear-guard","Flintoff & Harmison"],
     story: "In the most-watched Ashes series in a generation, Ponting's 156 at Old Trafford was a captain's innings for the ages. He batted 407 minutes to save a match Australia had no right to save. Against Flintoff and Harmison at full tilt.",
     culturalValidation: 88,
-    levers: { matchImpact:92, conditions:88, clutchness:96, narrative:90, historicalWeight:86, perceivedGreatness;88 },
+    levers: { matchImpact:92, conditions:88, clutchness:96, narrative:90, historicalWeight:86, perceivedGreatness:88 },
   },
   {
     id: 10,
@@ -111,7 +111,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Return from ban","Redemption","Anderson & Broad"],
     story: "Thirteen months after the ball-tampering scandal, Smith walked out at Edgbaston to boos and applause in equal measure. He scored 144 then 142 in the same match. The standing ovation at the end said everything redemption can sound like.",
     culturalValidation: 94,
-    levers: { matchImpact:92, conditions:82, clutchness:88, narrative:99, historicalWeight:88, perceivedGreatness;92 },
+    levers: { matchImpact:92, conditions:82, clutchness:88, narrative:99, historicalWeight:88, perceivedGreatness:92 },
   },
   {
     id: 11,
@@ -122,7 +122,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Fastest double","WACA","Speed record"],
     story: "Warner's 253 off 229 balls was the fastest Test double century in history at the time. An assault so brutal it made scoring a double hundred look like a T20 exercise.",
     culturalValidation: 78,
-    levers: { matchImpact:86, conditions:62, clutchness:55, narrative:72, historicalWeight:82, perceivedGreatness;76 },
+    levers: { matchImpact:86, conditions:62, clutchness:55, narrative:72, historicalWeight:82, perceivedGreatness:76 },
   },
   {
     id: 12,
@@ -155,7 +155,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Greatest chase ever","vs Australia's peak","The impossible"],
     story: "West Indies were bowled out for 51 in their first innings. They needed 308 to beat Australia. Lara's 153* is widely cited as the greatest match-winning innings in Test history â alone, against McGrath, Warne, Gillespie.",
     culturalValidation: 97,
-    levers: { matchImpact:100, conditions:90, clutchness:100, narrative:92, historicalWeight:96, perceivedGreatness;96 },
+    levers: { matchImpact:100, conditions:90, clutchness:100, narrative:92, historicalWeight:96, perceivedGreatness:96 },
   },
   {
     id: 15,
@@ -166,7 +166,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["vs peak Australian attack","Technical masterclass","SCG"],
     story: "Tendulkar against Warne, McGrath, Lee and Gillespie at the height of their powers â and he scored 241* to save the match. His footwork against Warne was a clinic. The best batter in the world proving it against the best attack.",
     culturalValidation: 90,
-    levers: { matchImpact:88, conditions:92, clutchness:87, narrative:84, historicalWeight:87, perceivedGreatness;88 },
+    levers: { matchImpact:88, conditions:92, clutchness:87, narrative:84, historicalWeight:87, perceivedGreatness:88 },
   },
   {
     id: 16,
@@ -177,7 +177,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Tony Greig 'grovel'","Statement innings","Political weight"],
     story: "Played weeks after England captain Tony Greig promised to make West Indies 'grovel'. Richards' 291 was not an innings â it was a reply. It launched the era of West Indian supremacy that would last 15 years.",
     culturalValidation: 94,
-    levers: { matchImpact:88, conditions:76, clutchness:74, narrative:94, historicalWeight:94, perceivedGreatness;92 },
+    levers: { matchImpact:88, conditions:76, clutchness:74, narrative:94, historicalWeight:94, perceivedGreatness:92 },
   },
   {
     id: 17,
@@ -188,7 +188,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["World Record (36 years)","Age 21","All-time legend"],
     story: "Sobers was 21 years old when he set the world record with 365*. It stood for 36 years. Not just a record â a monument. Every batsman who aimed for greatness measured themselves against it.",
     culturalValidation: 95,
-    levers: { matchImpact:86, conditions:68, clutchness:62, narrative:90, historicalWeight:98, perceivedGreatness;96 },
+    levers: { matchImpact:86, conditions:68, clutchness:62, narrative:90, historicalWeight:98, perceivedGreatness:96 },
   },
   {
     id: 18,
@@ -232,7 +232,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Sri Lanka record","Artistry","Weak,opposition"],
     story: "Sangkakara's 319 â Sri Lanka's highest Test score â in the final act of one of cricket's most complete careers. A reminder that batting can be more than statistics.",
     culturalValidation: 70,
-    levers: { matchImpact:78, conditions:48, clutchness:52, narrative:84, historicalWeight:76, perceivedGreatness;72 },
+    levers: { matchImpact:78, conditions:48, clutchness:52, narrative:84, historicalWeight:76, perceivedGreatness:72 },
   },
   {
     id: 22,
