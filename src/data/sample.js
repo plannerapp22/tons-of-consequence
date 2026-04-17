@@ -34,7 +34,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Lord's","Ashes","Age 21"],
     story: "Bradman's 254 at Lord's in just his third Test match announced him to the world in cricket's most theatrical setting. England's press ran out of superlatives. He became adored by the very crowd he was destroying.",
     culturalValidation: 90,
-    levers: { matchImpact:75, conditions:80, clutchness:68, narrative:85, historicalWeight:90, perceivedGreatness;90 },
+    levers: { matchImpact:75, conditions:80, clutchness:68, narrative:85, historicalWeight:90, perceivedGreatness:90 },
   },
   {
     id: 4,
