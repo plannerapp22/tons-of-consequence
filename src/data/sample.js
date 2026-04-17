@@ -67,7 +67,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Keeper-batter","Strike Rate","Series winner"],
     story: "At No.7 with the series on the line, Gilchrist's 149* off 163 balls reinvented what a wicketkeeper-batter could look like. Not just a bonus â a weapon. A knock that changed how the position was understood for the next 20 years.",
     culturalValidation: 80,
-    levers: { matchImpact:88, conditions:76, clutchness;82, narrative:80, historicalWeight:78, perceivedGreatness:80 },
+    levers: { matchImpact:88, conditions:76, clutchness:82, narrative:80, historicalWeight:78, perceivedGreatness:80 },
   },
   {
     id: 7,
@@ -78,7 +78,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Hostile conditions","Series decider","Ambrose & Walsh"],
     story: "Waugh's unbeaten 200 in Jamaica against Ambrose, Walsh and Bishop â the most feared pace attack in the world. Australia's first series win in the Caribbean since 1975. Cold, controlled, unbreakable â the innings that began the handover of world supremacy.",
     culturalValidation: 86,
-    levers: { matchImpact:94, conditions;90, clutchness;92, narrative:90, historicalWeight:90, perceivedGreatness:88 },
+    levers: { matchImpact:94, conditions:90, clutchness:92, narrative:90, historicalWeight:90, perceivedGreatness:88 },
   },
   {
     id: 8,
@@ -89,7 +89,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["SCG","Career best","Roebuck tribute"],
     story: "Clarke's 329* at the SCG during a match saturated with emotional weight following the death of cricket writer Peter Roebuck. A captain carrying his country on grief-soaked ground.",
     culturalValidation: 82,
-    levers: { matchImpact:85, conditions:70, clutchness;70, narrative:90, historicalWeight:80, perceivedGreatness:82 },
+    levers: { matchImpact:85, conditions:70, clutchness:70, narrative:90, historicalWeight:80, perceivedGreatness:82 },
   },
   {
     id: 9,
@@ -210,7 +210,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["World Record (briefly)","With Sangkakara","Elegance"],
     story: "Jayawardene's 374 briefly held the world record. The most elegant innings in a record book littered with brute force. He made accumulation look like sculpture.",
     culturalValidation: 78,
-    levers: { matchImpact:72, conditions:70, clutchness;55, narrative:82, historicalWeight:92, perceivedGreatness:80 },
+    levers: { matchImpact:72, conditions:70, clutchness:55, narrative:82, historicalWeight:92, perceivedGreatness:80 },
   },
   {
     id: 20,
@@ -221,7 +221,7 @@ export const SAMPLE_CENTURIES = [
     tags: ["Greatest Ashes chase","Last pair","Cummins & Hazlewood"],
     story: "England needed 359 with the last pair at the crease. Stokes scored 135* and pulled off the impossible. The final over, the last wicket, the single. Against Cummins and Hazlewood. The most dramatic Test conclusion in the modern era.",
     culturalValidation: 98,
-    levers: { matchImpact:100, conditions;86, clutchness:100, narrative:92, historicalWeight:94, perceivedGreatness:96 },
+    levers: { matchImpact:100, conditions:86, clutchness:100, narrative:92, historicalWeight:94, perceivedGreatness:96 },
   },
   {
     id: 21,
