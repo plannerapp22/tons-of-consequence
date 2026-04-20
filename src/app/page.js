@@ -215,7 +215,7 @@ function OnboardingScreen({ order, setOrder, onSubmit }) {
           color:'#F5EDD8', fontSize:11, fontWeight:500, letterSpacing:'2px',
           padding:14, borderRadius:4, cursor:'pointer',
         }}>
-          SEE MY RANKINGS ->
+          SEE MY RANKINGS -&gt;
         </button>
       </div>
     </div>
@@ -464,7 +464,7 @@ function TonsApp() {
         <WeightingStrip order={criteriaOrder} onChange={() => setScreen('onboard')} />
         <div style={{ maxWidth:860, margin:'0 auto', padding:'20px 14px' }}>
           <button onClick={() => setSelected(null)} style={{ background:'transparent', border:'0.5px solid var(--border-strong)', color:'var(--text-muted)', cursor:'pointer', fontSize:10, marginBottom:16, padding:'5px 12px', letterSpacing:'1px', fontWeight:500, textTransform:'uppercase', borderRadius:3 }}>
-            <- BACK TO RANKINGS
+            &lt;- BACK TO RANKINGS
           </button>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 260px', gap:16, alignItems:'start' }}>
             <div>
@@ -539,7 +539,7 @@ function TonsApp() {
         <HeaderBanner />
         <WeightingStrip order={criteriaOrder} onChange={() => setScreen('onboard')} />
         <div style={{ maxWidth:860, margin:'0 auto', padding:'20px 14px' }}>
-          <button onClick={() => setCompareMode(false)} style={{ background:'transparent', border:'0.5px solid var(--border-strong)', color:'var(--text-muted)', cursor:'pointer', fontSize:10, marginBottom:16, padding:'5px 12px', letterSpacing:'1px', borderRadius:3 }}><- BACK</button>
+          <button onClick={() => setCompareMode(false)} style={{ background:'transparent', border:'0.5px solid var(--border-strong)', color:'var(--text-muted)', cursor:'pointer', fontSize:10, marginBottom:16, padding:'5px 12px', letterSpacing:'1px', borderRadius:3 }}>&lt;- BACK</button>
           <div style={{ background:'var(--bg-panel)', border:'0.5px solid var(--border-strong)', borderRadius:5, padding:16, marginBottom:20 }}>
             <div style={{ fontSize:9, color:'var(--text-dim)', letterSpacing:'2px', textTransform:'uppercase', marginBottom:10 }}>THE VERDICT</div>
             <p style={{ color:'var(--text-primary)', fontSize:14, lineHeight:1.8, margin:'0 0 12px', fontWeight:500 }}>{verdict.verdict}</p>
@@ -576,7 +576,7 @@ function TonsApp() {
             ))}
           </div>
           <div style={{ marginTop:16, textAlign:'center' }}>
-            <button onClick={() => { setCompareList([]); setCo}pareMode(false); }} style={{ background:'var(--accent-red)', border:'none', color:'#F5EDD8', padding:'10px 24px', borderRadius:4, cursor:'pointer', fontSize:11, fontWeight:500, letterSpacing:'1.5px' }}>
+            <button onClick={() => { setCompareList([]); setCompareMode(false); }} style={{ background:'var(--accent-red)', border:'none', color:'#F5EDD8', padding:'10px 24px', borderRadius:4, cursor:'pointer', fontSize:11, fontWeight:500, letterSpacing:'1.5px' }}>
               CLEAR & RETURN
             </button>
           </div>
@@ -596,7 +596,7 @@ function TonsApp() {
       {/* Compare strip */}
       {compareList.length > 0 && (
         <div style={{ background:'var(--accent-red)', padding:'8px 14px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-          <span style={{ color:'|F5EDD8', fontSize:11, fontWeight:500, letterSpacing:'1px' }}>{compareList.length}/3 SELECTED</span>
+          <span style={{ color:'#F5EDD8', fontSize:11, fontWeight:500, letterSpacing:'1px' }}>{compareList.length}/3 SELECTED</span>
           <div style={{ display:'flex', gap:8 }}>
             {compareList.length >= 2 && (
               <button onClick={() => setCompareMode(true)} style={{ background:'#F5EDD8', border:'none', color:'var(--accent-red)', padding:'4px 12px', borderRadius:3, cursor:'pointer', fontSize:10, fontWeight:500, letterSpacing:'1px' }}>COMPARE NOW</button>
@@ -609,7 +609,7 @@ function TonsApp() {
       <div style={{ maxWidth:860, margin:'0 auto' }}>
         {/* Search */}
         <div style={{ background:'var(--bg-subtle)', border:'0.5px solid var(--border-strong)', borderRadius:4, padding:'8px 12px', display:'flex', alignItems:'center', gap:8, margin:'12px 14px' }}>
-          <span style={{ color:'var(--text-dim)', fontSize:13 }}>o</span>
+          <span style={{ color:'var(--text-dim)', fontSize:13 }}>?</span>
           <input
             ref={searchRef}
             type="text"
@@ -681,7 +681,7 @@ function TonsApp() {
 export default function Page() {
   return (
     <Suspense fallback={
-      <div style={{ background:'#162E20', minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center', color:'|4A7A4A', fontFamily:'system-ui,sans-serif', fontSize:12, letterSpacing:'2px' }}>
+      <div style={{ background:'#162E20', minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center', color:'|#4A7A4A', fontFamily:'system-ui,sans-serif', fontSize:12, letterSpacing:'2px' }}>
         LOADING...
       </div>
     }>
